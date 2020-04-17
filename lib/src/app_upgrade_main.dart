@@ -24,10 +24,10 @@ abstract class AppUpgrade {
   }
 
   static void checkUpdate(
-      BuildContext context, {
-        AppVersionChecker checker,
-        bool showMessageWhenNoNewVersion = true,
-      }) async {
+    BuildContext context, {
+    @required AppVersionChecker checker,
+    bool showMessageWhenNoNewVersion = true,
+  }) async {
     assert(context != null);
     assert(checker != null);
     assert(showMessageWhenNoNewVersion != null);
@@ -59,10 +59,10 @@ abstract class AppUpgrade {
   }
 
   static void _installApp(
-      BuildContext context,
-      AppInfo appInfo,
-      AppVersionChecker checker,
-      ) {
+    BuildContext context,
+    AppInfo appInfo,
+    AppVersionChecker checker,
+  ) {
     if (Platform.isIOS) {
       _upgradeAppByBrowser(appInfo.downloadURL);
     } else {
