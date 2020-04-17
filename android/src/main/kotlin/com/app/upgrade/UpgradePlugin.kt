@@ -1,5 +1,6 @@
 package com.app.upgrade
 
+import android.util.Log
 import androidx.annotation.NonNull
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
@@ -28,6 +29,7 @@ class UpgradePlugin : FlutterPlugin, MethodCallHandler {
     }
 
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
+        Log.d(channelName, "onMethodCall ${call.method}(${call.arguments})")
         when (call.method) {
             installAppMethod -> {
                 UpgradeApp.installApp(call, result)
