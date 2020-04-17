@@ -83,6 +83,7 @@ abstract class AppUpgrade {
 
   ///直接安装下载好的apk
   static Future<void> _installAppDirectly(String appLocalPath) async {
+    print("_installAppDirectly appLocalPath = $appLocalPath");
     if (appLocalPath == null) return null;
     try {
       return _channel.invokeMethod(_installAppMethod, {
@@ -96,6 +97,7 @@ abstract class AppUpgrade {
 
   ///后台下载apk，下载完成后启动安装流程
   static Future<void> _downloadInstallApp(String downloadUrl) async {
+    print("_downloadInstallApp downloadUrl = $downloadUrl");
     try {
       return _channel.invokeMethod(_downloadInstallAppMethod, {
         "downloadUrl": downloadUrl,

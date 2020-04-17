@@ -25,9 +25,9 @@ class DemoChecker extends AppVersionChecker {
           versionCode: "123",
           versionName: "1.2.3",
           releaseNote: """
-          1. 找到了新冠肺炎的源头。
-          2. 研制出了疫苗。
-          3. 找到了避免传染的有效方法。
+1. 找到了新冠肺炎的源头。
+2. 研制出了疫苗。
+3. 找到了避免传染的有效方法。
         """,
           downloadURL: appDownloadUrl,
           forceUpgrade: forceUpgrade,
