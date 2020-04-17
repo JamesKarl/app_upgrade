@@ -33,6 +33,7 @@ abstract class AppUpgrade {
     assert(showMessageWhenNoNewVersion != null);
 
     final appInfo = await checker.checkIfHasNewVersion();
+    print("appInfo: $appInfo");
     if (appInfo?.hasNewVersion ?? false) {
       ///有新版本
       if (_upgradeDialogDisplayed == false) {

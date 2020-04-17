@@ -16,4 +16,9 @@ class AppInfo {
     this.forceUpgrade,
     this.upgradeByBrowser = false,
   });
+
+  @override
+  String toString() {
+    return 'AppInfo{hasNewVersion: $hasNewVersion, versionName: $versionName, versionCode: $versionCode, releaseNote: $releaseNote, downloadURL: $downloadURL, forceUpgrade: $forceUpgrade, upgradeByBrowser: $upgradeByBrowser}';
+  }
 }

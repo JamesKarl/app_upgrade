@@ -18,7 +18,7 @@ class DemoChecker extends AppVersionChecker {
 
   @override
   Future<AppInfo> checkIfHasNewVersion() async {
-    final hasNewVersion = Random().nextBool();
+    final hasNewVersion = true; // Random().nextBool();
     if (hasNewVersion) {
       return AppInfo(
           hasNewVersion: true,
