@@ -11,6 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  #https://pub.dartlang.org/packages/url_launcher#-installing-tab-
+  url_launcher: ^5.2.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
