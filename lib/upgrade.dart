@@ -11,8 +11,9 @@ import 'package:url_launcher/url_launcher.dart';
 abstract class AppUpgrade {
   static const _installAppMethod = "installApp";
   static const _downloadInstallAppMethod = "downloadInstallApp";
+  static const _channelName = "app_upgrade";
 
-  static const MethodChannel _channel = const MethodChannel('upgrade');
+  static const MethodChannel _channel = const MethodChannel(_channelName);
   static bool _upgradeDialogDisplayed = false;
 
   bool get installingAppInBackground => _installingAppInBackground;
