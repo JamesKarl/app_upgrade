@@ -73,7 +73,7 @@ abstract class AppUpgrade {
         if (appInfo.forceUpgrade) {
           checker
               .onRequireDownloadApp(context, appInfo)
-              .then(_installAppDirectly);
+              .then(installAppDirectly);
         } else {
           _downloadInstallApp(appInfo.downloadURL);
         }
@@ -82,7 +82,7 @@ abstract class AppUpgrade {
   }
 
   ///直接安装下载好的apk
-  static Future<void> _installAppDirectly(String appLocalPath) async {
+  static Future<void> installAppDirectly(String appLocalPath) async {
     print("_installAppDirectly appLocalPath = $appLocalPath");
     if (appLocalPath == null) return null;
     try {

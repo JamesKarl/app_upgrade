@@ -73,6 +73,18 @@ class Homepage extends StatelessWidget {
                     installByBrowser: false,
                   ));
             },
+          ),
+          RaisedButton(
+            shape: StadiumBorder(),
+            color: Colors.black87,
+            child: Text(
+              "直接安装apk",
+              style: const TextStyle(color: Colors.white),
+            ),
+            onPressed: () {
+              AppUpgrade.installAppDirectly(
+                  "/data/user/0/com.app.upgrade_example/cache/com.app.upgrade_example.apk");
+            },
           )
         ],
       ),
