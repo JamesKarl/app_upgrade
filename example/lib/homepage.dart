@@ -2,7 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:upgrade/upgrade.dart';
 import 'demo_cheker.dart';
 
-class Homepage extends StatelessWidget {
+class Homepage extends StatefulWidget {
+  @override
+  _HomepageState createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage>
+    with CheckAppUpgradeMixin<Homepage> {
+  @override
+  AppVersionChecker getAppVersionChecker() {
+    return DemoChecker(forceUpgrade: false, installByBrowser: false);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
