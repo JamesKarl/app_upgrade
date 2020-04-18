@@ -19,7 +19,7 @@ app 升级相关逻辑
 ```bash
 cd project_root  
 mkdir -p github
-git clone https://gitee.com/jameskarl/app_upgrade.git
+git clone https://github.com/JamesKarl/app_upgrade.git 
 ```
 
 pubspec.yaml
