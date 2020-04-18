@@ -2,6 +2,10 @@
 
 app 升级相关逻辑
 
+## screenshot
+
+![](./docs/homepage.png) | ![](./docs/force.png) |![](./docs/recommanded.png)
+
 ## Features
 
 ![features](./out/docs/features/features.png)
