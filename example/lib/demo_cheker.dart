@@ -18,7 +18,7 @@ class DemoChecker extends AppVersionChecker {
 
   @override
   Future<AppInfo> checkIfHasNewVersion() async {
-    final hasNewVersion = true; // Random().nextBool();
+    final hasNewVersion = Random().nextBool();
     if (hasNewVersion) {
       return AppInfo(
           hasNewVersion: true,
@@ -61,13 +61,22 @@ class DemoChecker extends AppVersionChecker {
         context: context,
         builder: (context) {
           return AlertDialog(
+            title: Text("提示"),
             content: Text("已经最新版本"),
             actions: <Widget>[
-              RaisedButton(
-                child: Text("知道啦！"),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
+              SizedBox(
+                width: 100,
+                child: RaisedButton(
+                  shape: StadiumBorder(),
+                  color: Colors.amber,
+                  child: Text(
+                    "知道啦！",
+                    style: const TextStyle(color: Colors.black),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
               ),
             ],
           );
