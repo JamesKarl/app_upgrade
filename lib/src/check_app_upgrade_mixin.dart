@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:upgrade/src/app_version_checker.dart';
 
 import 'app_upgrade_main.dart';
 
@@ -27,13 +28,23 @@ mixin CheckAppUpgradeMixin<T extends StatefulWidget> on State<T> {
   void onAppResumed() {
     if (AppUpgrade.installingAppInBackground) return;
     if (context != null && mounted) {
-      AppUpgrade.checkUpdate(context, showMessageWhenNoNewVersion: false);
+      AppUpgrade.checkUpdate(
+        context,
+        checker: getAppVersionChecker(),
+        showMessageWhenNoNewVersion: false,
+      );
     } else {
       Future.delayed(Duration(seconds: 2), () {
         if (context != null && mounted) {
-          AppUpgrade.checkUpdate(context, showMessageWhenNoNewVersion: false);
+          AppUpgrade.checkUpdate(
+            context,
+            checker: getAppVersionChecker(),
+            showMessageWhenNoNewVersion: false,
+          );
         }
       });
     }
   }
+
+  AppVersionChecker getAppVersionChecker();
 }
